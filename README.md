@@ -1,7 +1,7 @@
 
 Prerequisites
 
-Visual Studio 2019, Microsoft SQL Server Management Studio
+Visual Studio 2022, Microsoft SQL Server Management Studio
 
 Instructions for API
 
