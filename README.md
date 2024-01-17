@@ -1,11 +1,6 @@
 
-Prerequisites
 
-Visual Studio 2022, Microsoft SQL Server Management Studio
+# employee payroll app 
 
-Instructions for API
-
-Clone and open the project in visual studio
-Open PayrollAPI.Infrastructure project in nuget package manager console
-Execute Update-Database command
-Debug ExpenseTracker
+1) Angular
+2) .Net 6
