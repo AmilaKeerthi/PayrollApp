@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "qUBXh13Noj1AYfX+6QNs8TYvwlcD+Y4JUDhC4N+CzkFrIvNLgYFjgsDSQ2BIwlKHUUIBZ2+nL1LOGLNIkiUkfw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\amilakeerthi\\Projects\\test\\PayrollApp\\PayrollApp\\PayrollAPI\\PayrollAPI.Business\\PayrollAPI.Business.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\amilakeerthi\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.extensions.options\\8.0.1\\microsoft.extensions.options.8.0.1.nupkg.sha512",
+    "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\amilakeerthi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
