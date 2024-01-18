@@ -36,6 +36,9 @@
             "projectReferences": {
               "C:\\Users\\amilakeerthi\\Projects\\test\\PayrollApp\\PayrollApp\\PayrollAPI\\PayrollAPI.Domain\\PayrollAPI.Domain.csproj": {
                 "projectPath": "C:\\Users\\amilakeerthi\\Projects\\test\\PayrollApp\\PayrollApp\\PayrollAPI\\PayrollAPI.Domain\\PayrollAPI.Domain.csproj"
+              },
+              "C:\\Users\\amilakeerthi\\Projects\\test\\PayrollApp\\PayrollApp\\PayrollAPI\\PayrollAPI.Utils\\PayrollAPI.Utils.csproj": {
+                "projectPath": "C:\\Users\\amilakeerthi\\Projects\\test\\PayrollApp\\PayrollApp\\PayrollAPI\\PayrollAPI.Utils\\PayrollAPI.Utils.csproj"
               }
             }
           }
@@ -53,6 +56,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
+              "target": "Package",
+              "version": "[8.0.1, )"
             },
             "Microsoft.Extensions.Options": {
               "target": "Package",
@@ -243,7 +250,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\amilakeerthi\\Projects\\test\\PayrollApp\\PayrollApp\\PayrollAPI\\PayrollAPI.Domain\\PayrollAPI.Domain.csproj": {
+                "projectPath": "C:\\Users\\amilakeerthi\\Projects\\test\\PayrollApp\\PayrollApp\\PayrollAPI\\PayrollAPI.Domain\\PayrollAPI.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -263,6 +274,10 @@
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[8.0.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.2.0, )"
             }
           },
           "imports": [

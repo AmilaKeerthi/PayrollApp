@@ -19,17 +19,25 @@ namespace PayrollAPI.Controllers
             }
 
             // GET: api/SalaryPayments
-            [HttpGet("{userId}")]
-            public async Task<ActionResult<IEnumerable<SalaryPaymentDTO>>> GetSalaryPayment(int userId)
+            [HttpGet]
+            public async Task<ActionResult<IEnumerable<SalaryPaymentDTO>>> GetSalaryPayment()
             {
                 return Ok(await _SalaryPaymentService.GetAllAsync());
+            }
+
+
+        // GET: api/SalaryPayments/1
+        [HttpGet("{userId}")]
+            public async Task<ActionResult<IEnumerable<SalaryPaymentDTO>>> GetSalaryPayment(int userId)
+            {
+                return Ok(await _SalaryPaymentService.GetByIdAsync(userId));
             }
 
             // PUT: api/SalaryPayments/5
             // To protect from overposting attacks, enable the specific properties you want to bind to, for
             // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
             [HttpPut("{id}")]
-            public async Task<IActionResult> PutSalaryPayment(int id, SalaryPaymentDTO SalaryPayment)
+            public async Task<IActionResult> PutSalaryPayment(int id, SalaryPaymentUpdateDTO SalaryPayment)
             {
                 if (id != SalaryPayment.SalaryPaymentId)
                 {
@@ -55,7 +63,7 @@ namespace PayrollAPI.Controllers
             // To protect from overposting attacks, enable the specific properties you want to bind to, for
             // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
             [HttpPost]
-            public async Task<ActionResult<SalaryPaymentDTO>> PostSalaryPayment(SalaryPaymentDTO SalaryPayment)
+            public async Task<ActionResult<SalaryPaymentDTO>> PostSalaryPayment(SalaryPaymentUpdateDTO SalaryPayment)
             {
 
                 var result = await _SalaryPaymentService.CreateAsync(SalaryPayment);

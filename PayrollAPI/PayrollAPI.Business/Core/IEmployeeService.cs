@@ -15,5 +15,7 @@ namespace PayrollAPI.Business.Core
         Task<EmployeeDTO> EditAsync(EmployeeDTO employee);
         Task<Boolean> RemoveAsync(int id);
         Task<IEnumerable<EmployeeDTO>> SearchAsync(string hint);
+        Task<SalaryPaymentDTO> AddSalaryPayment(SalaryPaymentUpdateDTO SalaryPayment);
+
     }
 }

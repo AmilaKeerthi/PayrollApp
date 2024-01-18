@@ -28,3 +28,5 @@ C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI.
 C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI.Business\obj\Debug\net6.0\refint\PayrollAPI.Business.dll
 C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI.Business\obj\Debug\net6.0\PayrollAPI.Business.pdb
 C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI.Business\obj\Debug\net6.0\ref\PayrollAPI.Business.dll
+C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI.Business\bin\Debug\net6.0\PayrollAPI.Utils.dll
+C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI.Business\bin\Debug\net6.0\PayrollAPI.Utils.pdb

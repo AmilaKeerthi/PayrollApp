@@ -22,3 +22,6 @@ C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI.
 C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI.Utils\obj\Debug\net6.0\refint\PayrollAPI.Utils.dll
 C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI.Utils\obj\Debug\net6.0\PayrollAPI.Utils.pdb
 C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI.Utils\obj\Debug\net6.0\ref\PayrollAPI.Utils.dll
+C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI.Utils\bin\Debug\net6.0\PayrollAPI.Domain.dll
+C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI.Utils\bin\Debug\net6.0\PayrollAPI.Domain.pdb
+C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI.Utils\obj\Debug\net6.0\PayrollAPI.Utils.csproj.CopyComplete

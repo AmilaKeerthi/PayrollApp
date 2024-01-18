@@ -9,10 +9,12 @@ namespace PayrollAPI.Business.Services
     public class SalaryPaymentService : ISalaryPaymentService
     {
         private readonly ISalaryPaymentRepository _SalaryPaymentRepository;
+        private readonly IEmployeeRepository _EmployeeRepository;
         private readonly IMapper mapper;
 
         public SalaryPaymentService(
             ISalaryPaymentRepository SalaryPaymentRepository,
+            IEmployeeRepository EmployeeRepository,
             IMapper mapper
             )
         {
@@ -22,14 +24,32 @@ namespace PayrollAPI.Business.Services
         }
 
 
-        public async Task<SalaryPaymentDTO> CreateAsync(SalaryPaymentDTO SalaryPayment)
+        public async Task<SalaryPaymentDTO> CreateAsync(SalaryPaymentUpdateDTO SalaryPayment)
         {
             try
             {
-                var updatedDetails = mapper.Map<SalaryPaymentDTO, SalaryPayment>(SalaryPayment);
-                var result = await _SalaryPaymentRepository.AddAsync(updatedDetails);
-                await _SalaryPaymentRepository.CompleteAsync();
-                return mapper.Map<SalaryPayment, SalaryPaymentDTO>(result);
+
+                var Employee = await _EmployeeRepository.FindAsync(e => e.EmployeeId.Equals(SalaryPayment.EmployeeId));
+                if(Employee != null)
+                {
+                    var updatedDetails = new SalaryPayment()
+                    {
+                        Amount = SalaryPayment.Amount,
+                        EmployeeId = SalaryPayment.EmployeeId,
+                        PaymentDate = SalaryPayment.PaymentDate,
+                        SalaryPaymentId = 0,
+                        Employee = Employee
+                    };
+                    var result = await _SalaryPaymentRepository.AddAsync(updatedDetails);
+                    await _SalaryPaymentRepository.CompleteAsync();
+                    return mapper.Map<SalaryPayment, SalaryPaymentDTO>(result);
+                } else
+                {
+                    return null;
+                }
+                
+
+              
             }
             catch (Exception e)
             {
@@ -38,16 +58,29 @@ namespace PayrollAPI.Business.Services
         }
 
 
-        public async Task<SalaryPaymentDTO> EditAsync(SalaryPaymentDTO SalaryPayment)
+        public async Task<SalaryPaymentDTO> EditAsync(SalaryPaymentUpdateDTO SalaryPayment)
         {
             try
             {
-                var updatedDetails = mapper.Map<SalaryPaymentDTO, SalaryPayment>(SalaryPayment);
-
-                var result = await _SalaryPaymentRepository.UpdateAsync(updatedDetails, updatedDetails.EmployeeId);
-                await _SalaryPaymentRepository.CompleteAsync();
-
-                return mapper.Map<SalaryPayment, SalaryPaymentDTO>(result);
+                var Employee = await _EmployeeRepository.FindAsync(e => e.EmployeeId.Equals(SalaryPayment.EmployeeId));
+                if (Employee != null)
+                {
+                    var updatedDetails = new SalaryPayment()
+                    {
+                        Amount = SalaryPayment.Amount,
+                        EmployeeId = SalaryPayment.EmployeeId,
+                        PaymentDate = SalaryPayment.PaymentDate,
+                        SalaryPaymentId = SalaryPayment.SalaryPaymentId,
+                        Employee = Employee
+                    };
+                    var result = await _SalaryPaymentRepository.UpdateAsync(updatedDetails, SalaryPayment.SalaryPaymentId);
+                    await _SalaryPaymentRepository.CompleteAsync();
+                    return mapper.Map<SalaryPayment, SalaryPaymentDTO>(result);
+                }
+                else
+                {
+                    return null;
+                }
             }
             catch (Exception e)
             {
@@ -59,7 +92,7 @@ namespace PayrollAPI.Business.Services
         {
             try
             {
-                IEnumerable<SalaryPayment> SalaryPayment = await _SalaryPaymentRepository.GetAllAsync();
+                IEnumerable<SalaryPayment> SalaryPayment = await _SalaryPaymentRepository.GetAllIncludingAsync(salary=>salary.Employee);
                 return mapper.Map<IEnumerable<SalaryPayment>, IEnumerable<SalaryPaymentDTO>>(SalaryPayment);
             }
             catch (Exception e)

@@ -79,5 +79,16 @@ namespace PayrollAPI.Controllers
             return Ok(await _EmployeeService.RemoveAsync(id));
         }
 
+        // POST: api/Employees/SalaryPayment
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [HttpPost("SalaryPayment")]
+        public async Task<ActionResult<SalaryPaymentUpdateDTO>> SalaryPayment(SalaryPaymentUpdateDTO salary)
+        {
+
+            var result = await _EmployeeService.AddSalaryPayment(salary);
+
+            return Ok(result);
+        }
     }
 }

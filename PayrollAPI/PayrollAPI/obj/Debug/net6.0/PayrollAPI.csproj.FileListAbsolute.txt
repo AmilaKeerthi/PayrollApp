@@ -146,3 +146,6 @@ C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\
 C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\obj\Debug\net6.0\PayrollAPI.pdb
 C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\obj\Debug\net6.0\PayrollAPI.genruntimeconfig.cache
 C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\obj\Debug\net6.0\ref\PayrollAPI.dll
+C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll

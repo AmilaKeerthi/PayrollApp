@@ -29,17 +29,13 @@ MapperConfiguration mappingConfig = new MapperConfiguration(mc =>
     mc.CreateMap<Employee, EmployeeDTO>();
     mc.CreateMap<SalaryPaymentDTO, SalaryPayment>();
     mc.CreateMap<SalaryPayment, SalaryPaymentDTO>();
+    mc.CreateMap<SalaryPayment, SalaryPaymentUpdateDTO>();
+    mc.CreateMap<SalaryPaymentUpdateDTO, SalaryPayment>();
+
 
 });
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-                      builder =>
-                      {
-                          builder.WithOrigins("http://localhost:4200");
-                      });
-});
+builder.Services.AddCors();
 
 IMapper mapper = mappingConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);

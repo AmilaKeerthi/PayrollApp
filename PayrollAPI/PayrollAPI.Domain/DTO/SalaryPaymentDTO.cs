@@ -11,5 +11,7 @@ namespace PayrollAPI.Domain.DTO
         public int SalaryPaymentId { get; set; }
         public DateTime PaymentDate { get; set; }
         public decimal Amount { get; set; }
+        public EmployeeDTO Employee { get; set; }
+
     }
 }

@@ -11,8 +11,8 @@ namespace PayrollAPI.Business.Core
     {
         Task<IEnumerable<SalaryPaymentDTO>> GetAllAsync();
         Task<SalaryPaymentDTO> GetByIdAsync(int id);
-        Task<SalaryPaymentDTO> CreateAsync(SalaryPaymentDTO salaryPaymentDTO);
-        Task<SalaryPaymentDTO> EditAsync(SalaryPaymentDTO salaryPaymentDTO);
+        Task<SalaryPaymentDTO> CreateAsync(SalaryPaymentUpdateDTO salaryPaymentDTO);
+        Task<SalaryPaymentDTO> EditAsync(SalaryPaymentUpdateDTO salaryPaymentDTO);
         Task<Boolean> RemoveAsync(int id);
         Task<IEnumerable<SalaryPaymentDTO>> SearchAsync(string hint);
     }

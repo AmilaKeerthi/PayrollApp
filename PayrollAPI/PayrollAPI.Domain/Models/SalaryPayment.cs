@@ -14,6 +14,6 @@ namespace PayrollAPI.Domain.Models
         public decimal Amount { get; set; }
 
         // Navigation property
-        public Employee Employee { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }
