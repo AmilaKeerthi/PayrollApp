@@ -12,16 +12,15 @@ namespace PayrollAPI.Business.Services
         private readonly ISalaryPaymentRepository _SalaryPaymentRepository;
         private readonly IEmployeeRepository _EmployeeRepository;
         private readonly IMapper mapper;
-        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public SalaryPaymentService(
             ISalaryPaymentRepository SalaryPaymentRepository,
             IEmployeeRepository EmployeeRepository,
-            IHttpContextAccessor httpContextAccessor,
             IMapper mapper
             )
         {
             _SalaryPaymentRepository = SalaryPaymentRepository;
+            _EmployeeRepository = EmployeeRepository;
             this.mapper = mapper;
 
         }
@@ -95,7 +94,6 @@ namespace PayrollAPI.Business.Services
         {
             try
             {
-                var user = _httpContextAccessor.HttpContext.User.Identities;
                 IEnumerable<SalaryPayment> SalaryPayment = await _SalaryPaymentRepository.GetAllIncludingAsync(salary=>salary.Employee);
                 return mapper.Map<IEnumerable<SalaryPayment>, IEnumerable<SalaryPaymentDTO>>(SalaryPayment);
             }
