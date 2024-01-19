@@ -149,3 +149,7 @@ C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\
 C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\amilakeerthi\Projects\test\PayrollApp\PayrollApp\PayrollAPI\PayrollAPI\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll

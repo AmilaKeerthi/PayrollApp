@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PayrollAPI.Business.Core;
 using PayrollAPI.Domain.DTO;
 
@@ -6,7 +7,7 @@ using PayrollAPI.Domain.DTO;
 
 namespace PayrollAPI.Controllers
 {
-   
+        [Authorize]
         [Route("api/[controller]")]
         [ApiController]
         public class SalaryPaymentsController : ControllerBase
@@ -22,12 +23,13 @@ namespace PayrollAPI.Controllers
             [HttpGet]
             public async Task<ActionResult<IEnumerable<SalaryPaymentDTO>>> GetSalaryPayment()
             {
+            HttpContext.User.
                 return Ok(await _SalaryPaymentService.GetAllAsync());
             }
 
 
-        // GET: api/SalaryPayments/1
-        [HttpGet("{userId}")]
+            // GET: api/SalaryPayments/1
+            [HttpGet("{userId}")]
             public async Task<ActionResult<IEnumerable<SalaryPaymentDTO>>> GetSalaryPayment(int userId)
             {
                 return Ok(await _SalaryPaymentService.GetByIdAsync(userId));

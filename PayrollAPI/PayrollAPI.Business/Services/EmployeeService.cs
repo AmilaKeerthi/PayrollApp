@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using Microsoft.AspNetCore.Identity;
 using PayrollAPI.Business.Core;
 using PayrollAPI.Domain.DTO;
 using PayrollAPI.Domain.Interfaces;
 using PayrollAPI.Domain.Models;
 using PayrollAPI.Utils.Services;
-using System.Security.Cryptography;
 
 
 namespace PayrollAPI.Business.Services
@@ -45,7 +44,6 @@ namespace PayrollAPI.Business.Services
                     var updatedDetails = new SalaryPayment()
                     {
                         Amount = SalaryPayment.Amount,
-                        //EmployeeId = SalaryPayment.EmployeeId,
                         PaymentDate = SalaryPayment.PaymentDate,
                         SalaryPaymentId = 0,
                         Employee = Employee
@@ -83,19 +81,19 @@ namespace PayrollAPI.Business.Services
 
                 
                 await _EmployeeRepository.CompleteAsync();
+                //var login = new LoginDTO() { Email = updatedDetails.Email, Password = password };
 
-                byte[] salt = GenerateSalt();
+                // Hash password during registration
+                var passwordHash = password;//new PasswordHasher<LoginDTO>().HashPassword(login, password);
 
-                // Hash the password
-                string hashedPassword = HashPassword(password, salt);
 
-               var userResult = await _UserRepository.AddAsync(new User()
+                var userResult = await _UserRepository.AddAsync(new User()
                 {
                     UserId = 0,
                     Email = employee.Email,
                     EmployeeId = result.EmployeeId,
                     IsAdmin = false,
-                    PasswordHash = hashedPassword
+                    PasswordHash = passwordHash
                 }) ;
 
                 await _UserRepository.CompleteAsync();
@@ -114,35 +112,6 @@ namespace PayrollAPI.Business.Services
             Random random = new Random();
             int password = random.Next(100000, 999999);
             return password.ToString();
-        }
-
-
-        private static byte[] GenerateSalt()
-        {
-            // Generate a random salt using a secure random number generator
-            byte[] salt = new byte[16];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(salt);
-            }
-            return salt;
-        }
-
-        private static string HashPassword(string password, byte[] salt)
-        {
-            // Use the PBKDF2 algorithm to hash the password
-            string hashedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: password,
-                salt: salt,
-                prf: KeyDerivationPrf.HMACSHA256,
-                iterationCount: 10000, // Adjust the iteration count as needed
-                numBytesRequested: 256 / 8 // 256 bits
-            ));
-
-            // Combine the salt and hashed password for storage
-            string combinedHash = Convert.ToBase64String(salt) + ":" + hashedPassword;
-
-            return combinedHash;
         }
 
         public async Task<EmployeeDTO> EditAsync(EmployeeDTO employee)

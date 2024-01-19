@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "9eJLvRlje+E5KF7sCnqTLgeAd5tXbMB6TgTEwVmB3py/f7vOXxPK72WQK9THxrR7RXptpdTTrHP86vfytD1CDg==",
+  "dgSpecHash": "MVLJ5TdTFWJhRh+jzYH+IrsirDavbwNSmXPtnSKf9ta86jzTtvsX422VeOz2DrAY92kxgoYzD/iqZCO8+hbMLw==",
   "success": true,
   "projectFilePath": "C:\\Users\\amilakeerthi\\Projects\\test\\PayrollApp\\PayrollApp\\PayrollAPI\\PayrollAPI.Infrastructure\\PayrollAPI.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
@@ -46,6 +48,7 @@
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
+    "C:\\Users\\amilakeerthi\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []

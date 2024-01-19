@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace PayrollAPI.Domain.DTO
 {
-    public class UserDTO
+    public class ChangePasswordDTO
     {
         public string Email { get; set; }
-        public bool IsAdmin { get; set; }
-        public string? Token { get; set; }
-        public string? FullName { get; set; }
+        public string OldPassword { get; set; }
+        public string NewPassword { get; set; }
 
     }
 }

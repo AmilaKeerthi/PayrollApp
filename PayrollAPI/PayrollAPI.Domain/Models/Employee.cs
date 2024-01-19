@@ -14,6 +14,6 @@ namespace PayrollAPI.Domain.Models
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public bool IsActive { get; set; }
-        public virtual User User { get; set; }
+        public User User { get; set; }
     }
 }

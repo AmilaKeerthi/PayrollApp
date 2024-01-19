@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using PayrollAPI.Business.Core;
 using PayrollAPI.Domain.DTO;
 using PayrollAPI.Domain.Interfaces;
@@ -11,10 +12,12 @@ namespace PayrollAPI.Business.Services
         private readonly ISalaryPaymentRepository _SalaryPaymentRepository;
         private readonly IEmployeeRepository _EmployeeRepository;
         private readonly IMapper mapper;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public SalaryPaymentService(
             ISalaryPaymentRepository SalaryPaymentRepository,
             IEmployeeRepository EmployeeRepository,
+            IHttpContextAccessor httpContextAccessor,
             IMapper mapper
             )
         {
@@ -92,6 +95,7 @@ namespace PayrollAPI.Business.Services
         {
             try
             {
+                var user = _httpContextAccessor.HttpContext.User.Identities;
                 IEnumerable<SalaryPayment> SalaryPayment = await _SalaryPaymentRepository.GetAllIncludingAsync(salary=>salary.Employee);
                 return mapper.Map<IEnumerable<SalaryPayment>, IEnumerable<SalaryPaymentDTO>>(SalaryPayment);
             }

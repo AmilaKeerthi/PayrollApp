@@ -8,5 +8,8 @@ namespace PayrollAPI.Utils.Settings
 {
     public class AuthSettings
     {
+        public string Secrect { get; set; } 
+        public string Issuer { get; set; }
+        public string Audience { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PayrollAPI.Business.Core;
 using PayrollAPI.Domain.DTO;
 
@@ -6,6 +7,7 @@ using PayrollAPI.Domain.DTO;
 
 namespace PayrollAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController : ControllerBase
