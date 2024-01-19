@@ -6,38 +6,4 @@
 2) .Net 6
 
 Class Diagram
-+----------------------+     +------------------------+
-|    Employee          |     | SalaryPayment          |
-+----------------------+     +------------------------+
-| - EmployeeId: int    |     | - SalaryPaymentId: int |
-| - FullName: string   |     | - EmployeeId: int      |
-| - Email: string      |     | - PaymentDate: DateTime|
-| - Salary: decimal    |     | - Amount: decimal      |
-| - JoinDate: DateTime |     |                        |
-| - PhoneNumber: string|     |                        |
-| - Address: string    |     |                        |
-| - IsActive: bool     |     |                        |
-| - User: User         |     |                        |
-+----------------------+     +------------------------+
-  ^         ^                           |
- 1|        1|                           |1..*
-  |         +---------------------------+
-  |
-  |
-  |
-  |
-  |  +------------------------+
- 1|  |      User              |
-  |  +------------------------+
-  |  | - UserId: int          |
-  +--| - EmployeeId: int      |
-     | - Email: string        |
-     | - PasswordHash: string |
-     | - IsAdmin: bool        |
-     | - Employee: Employee   |
-     |                        |
-     |                        |
-     |                        |
-     +------------------------+
-
-
+![image](https://github.com/AmilaKeerthi/PayrollApp/assets/154110349/3607eca0-31a8-4433-b9dc-cf98260553f9)
