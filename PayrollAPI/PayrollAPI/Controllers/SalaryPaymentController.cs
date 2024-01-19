@@ -23,7 +23,6 @@ namespace PayrollAPI.Controllers
             [HttpGet]
             public async Task<ActionResult<IEnumerable<SalaryPaymentDTO>>> GetSalaryPayment()
             {
-            HttpContext.User.
                 return Ok(await _SalaryPaymentService.GetAllAsync());
             }
 
