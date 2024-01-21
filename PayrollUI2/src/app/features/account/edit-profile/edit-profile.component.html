@@ -1,0 +1,47 @@
+
+<form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+  <p>Use the form below to change your Profile Details.</p>
+
+  <div mat-dialog-content class="content">
+      <div class="row">
+          <mat-form-field appearance="outline">
+              <mat-label>Full name:</mat-label>
+              <input matInput type="text" placeholder="i.e David" formControlName="fullName" readonly>
+          </mat-form-field>
+
+      </div>
+
+      <div class="row">
+          <mat-form-field appearance="outline">
+              <mat-label>Email:</mat-label>
+              <input matInput type="email" placeholder="i.e david@gmail.com" formControlName="email" readonly>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+              <mat-label> Join Date:</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="joinDate" readonly>
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+      </div>
+
+      <div class="row">
+          <mat-form-field appearance="outline">
+              <mat-label>Address:</mat-label>
+              <input matInput placeholder="i.e 123, main street, Colombo" formControlName="address">
+          </mat-form-field>
+      </div>
+      <div class="row">
+          <mat-form-field appearance="outline">
+              <mat-label>Phone :</mat-label>
+              <input matInput placeholder="i.e 771234567" formControlName="phoneNumber">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+              <mat-label>Salary:</mat-label>
+              <input matInput placeholder="i.e 15" type="number" formControlName="salary" readonly>
+              <mat-hint>In dollar</mat-hint>
+          </mat-form-field>
+      </div>
+  </div>
+      <button style="margin: 10px;" mat-raised-button color="primary" type="submit">{{'Update'}}</button>
+</form>
