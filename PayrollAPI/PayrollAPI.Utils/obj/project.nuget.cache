@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "efXaHM1aafIzxlVJXAuFCX3QiWnMHF0JpOAVRRIJ6rjlQkin8t5E+i5pEcppqGCs76EQfVpuCJFtMbaeezSDAg==",
+  "dgSpecHash": "QgMWQxX0qkYCLSiV/q5oRhXXoc6sBRBIvAYWiopT9SpRIxGCZ0Jy7pjxp386zoQ54pm9sRFhtF2Q/PlUBjt32w==",
   "success": true,
   "projectFilePath": "C:\\Users\\amilakeerthi\\Projects\\test\\PayrollApp\\PayrollApp\\PayrollAPI\\PayrollAPI.Utils\\PayrollAPI.Utils.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\mailkit\\4.3.0\\mailkit.4.3.0.nupkg.sha512",
+    "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.extensions.options\\8.0.1\\microsoft.extensions.options.8.0.1.nupkg.sha512",
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
@@ -18,7 +20,8 @@
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.2.0\\system.identitymodel.tokens.jwt.7.2.0.nupkg.sha512",
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\amilakeerthi\\.nuget\\packages\\system.security.cryptography.pkcs\\7.0.3\\system.security.cryptography.pkcs.7.0.3.nupkg.sha512",
-    "C:\\Users\\amilakeerthi\\.nuget\\packages\\system.text.encoding.codepages\\7.0.0\\system.text.encoding.codepages.7.0.0.nupkg.sha512"
+    "C:\\Users\\amilakeerthi\\.nuget\\packages\\system.text.encoding.codepages\\7.0.0\\system.text.encoding.codepages.7.0.0.nupkg.sha512",
+    "C:\\Users\\amilakeerthi\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

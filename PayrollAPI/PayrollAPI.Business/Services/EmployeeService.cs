@@ -16,12 +16,14 @@ namespace PayrollAPI.Business.Services
         private readonly IMapper mapper;
         private readonly IEmailService _EmailService;
         private readonly IUserRepository _UserRepository;
+        private readonly IUserProvider _UserProvider;
 
         public EmployeeService(
             IEmployeeRepository EmployeeRepository,
             ISalaryPaymentRepository SalaryPaymentRepository,
             IEmailService EmailService,
             IUserRepository UserRepository,
+            IUserProvider UserProvider,
             IMapper mapper
             )
         {
@@ -29,6 +31,7 @@ namespace PayrollAPI.Business.Services
             _SalaryPaymentRepository = SalaryPaymentRepository;
             _EmailService = EmailService;
             _UserRepository = UserRepository;
+            _UserProvider = UserProvider;
             this.mapper = mapper;
 
         }
@@ -37,9 +40,9 @@ namespace PayrollAPI.Business.Services
         {
             try
             {
-
+                var isAdmin = _UserProvider.IsAdmin();
                 var Employee = await _EmployeeRepository.FindAsync(e => e.EmployeeId.Equals(SalaryPayment.EmployeeId));
-                if (Employee != null)
+                if (Employee != null && isAdmin)
                 {
                     var updatedDetails = new SalaryPayment()
                     {

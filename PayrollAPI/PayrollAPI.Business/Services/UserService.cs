@@ -38,7 +38,7 @@ namespace PayrollAPI.Business.Services
             {
                 user.PasswordHash = login.NewPassword;
                 user.IsAdmin = true;
-                var userResult = await _UserRepository.UpdateAsync(user,user.UserId);
+                var userResult = await _UserRepository.UpdateAsync(user, user.UserId);
 
                 await _UserRepository.CompleteAsync();
 
@@ -56,19 +56,21 @@ namespace PayrollAPI.Business.Services
         {
             // Hash password during registration
             var passwordHash = login.Password;//new PasswordHasher<LoginDTO>().HashPassword(login, login.Password);
-            var user = await _UserRepository.FindIncludingAsync(u=>u.Email == login.Email,inc=>inc.Employee);    
+            var user = await _UserRepository.FindIncludingAsync(u => u.Email == login.Email, inc => inc.Employee);
             // Store the hashed password in your database
             var storedHashedPassword = user.PasswordHash;
             // Verify password during login
-           // var passwordVerificationResult = new PasswordHasher<LoginDTO>().VerifyHashedPassword(login, storedHashedPassword, passwordHash);
+            // var passwordVerificationResult = new PasswordHasher<LoginDTO>().VerifyHashedPassword(login, storedHashedPassword, passwordHash);
 
-            if (login.Password==storedHashedPassword)//passwordVerificationResult == PasswordVerificationResult.Success)
+            if (user.Employee.IsActive && login.Password == storedHashedPassword)//passwordVerificationResult == PasswordVerificationResult.Success)
             {
-               
+
                 var claims = new List<Claim>
-{
-                new Claim(ClaimTypes.Name, user.Email),
-};
+                {
+                    new Claim(ClaimTypes.Name, user.Email),
+                    new Claim("UserId", user.UserId.ToString()),
+                    new Claim(ClaimTypes.Role, user.IsAdmin?"Admin":"User"),
+                };
 
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.Secrect));
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -86,20 +88,22 @@ namespace PayrollAPI.Business.Services
 
                 return new UserDTO()
                 {
+                    UserId = user.UserId,
                     Email = login.Email,
                     Token = tokenString,
                     IsAdmin = user.IsAdmin,
-                    FullName = user.Employee.FullName
+                    FullName = user.Employee.FullName,
+                    EmpId = user.EmployeeId
                 };
             }
             else
             {
                 // Passwords do not match
-                return null ;
+                return null;
             }
 
 
-            
+
         }
     }
 }

@@ -4,6 +4,7 @@ using PayrollAPI.Business.Core;
 using PayrollAPI.Domain.DTO;
 using PayrollAPI.Domain.Interfaces;
 using PayrollAPI.Domain.Models;
+using PayrollAPI.Utils.Services;
 
 namespace PayrollAPI.Business.Services
 {
@@ -11,16 +12,19 @@ namespace PayrollAPI.Business.Services
     {
         private readonly ISalaryPaymentRepository _SalaryPaymentRepository;
         private readonly IEmployeeRepository _EmployeeRepository;
+        private readonly IUserProvider _UserProvider;
         private readonly IMapper mapper;
 
         public SalaryPaymentService(
             ISalaryPaymentRepository SalaryPaymentRepository,
             IEmployeeRepository EmployeeRepository,
+            IUserProvider UserProvider,
             IMapper mapper
             )
         {
             _SalaryPaymentRepository = SalaryPaymentRepository;
             _EmployeeRepository = EmployeeRepository;
+            _UserProvider = UserProvider;
             this.mapper = mapper;
 
         }
@@ -30,9 +34,10 @@ namespace PayrollAPI.Business.Services
         {
             try
             {
+                var isAdmin = _UserProvider.IsAdmin();
 
                 var Employee = await _EmployeeRepository.FindAsync(e => e.EmployeeId.Equals(SalaryPayment.EmployeeId));
-                if(Employee != null)
+                if(Employee != null && isAdmin)
                 {
                     var updatedDetails = new SalaryPayment()
                     {
@@ -65,7 +70,9 @@ namespace PayrollAPI.Business.Services
             try
             {
                 var Employee = await _EmployeeRepository.FindAsync(e => e.EmployeeId.Equals(SalaryPayment.EmployeeId));
-                if (Employee != null)
+                var isAdmin = _UserProvider.IsAdmin();
+
+                if (Employee != null && isAdmin)
                 {
                     var updatedDetails = new SalaryPayment()
                     {
@@ -94,8 +101,18 @@ namespace PayrollAPI.Business.Services
         {
             try
             {
-                IEnumerable<SalaryPayment> SalaryPayment = await _SalaryPaymentRepository.GetAllIncludingAsync(salary=>salary.Employee);
-                return mapper.Map<IEnumerable<SalaryPayment>, IEnumerable<SalaryPaymentDTO>>(SalaryPayment);
+                var isAdmin = _UserProvider.IsAdmin();
+                if(isAdmin) {
+                    IEnumerable<SalaryPayment> SalaryPayment = await _SalaryPaymentRepository.GetAllIncludingAsync(salary => salary.Employee);
+                    return mapper.Map<IEnumerable<SalaryPayment>, IEnumerable<SalaryPaymentDTO>>(SalaryPayment);
+                } 
+                else
+                {
+                    var userId = int.Parse(_UserProvider.GetUserId());
+                    IEnumerable <SalaryPayment> SalaryPayment = await _SalaryPaymentRepository.FindAllAsync(salary => salary.Employee.User.UserId == userId);
+                    return mapper.Map<IEnumerable<SalaryPayment>, IEnumerable<SalaryPaymentDTO>>(SalaryPayment);
+                }
+                
             }
             catch (Exception e)
             {

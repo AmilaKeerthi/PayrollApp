@@ -69,6 +69,7 @@ builder.Services.AddScoped<ISalaryPaymentRepository, SalaryPaymentRepository>();
 builder.Services.AddScoped<ISalaryPaymentService, SalaryPaymentService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserProvider, UserProvider>();
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.Configure<AuthSettings>(builder.Configuration.GetSection("AuthSettings"));
 
