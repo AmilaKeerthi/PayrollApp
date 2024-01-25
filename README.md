@@ -22,5 +22,6 @@ Backend
 
 Frontend
 
-1) execute npm install command in payrollUI
-2) execute ng s -o
+1) open parollUI folder in command line.
+2) execute npm install command 
+3) execute ng s -o
