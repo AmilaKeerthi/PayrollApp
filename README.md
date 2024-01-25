@@ -12,12 +12,15 @@
 
 Instructions
 
+Backend
+
 1)Clone and open the payrollAPI project in visual studio 2022.
 2) build solution
-2)Open PayrollAPI.Infrastructure project in nuget package manager console
-3)Execute Update-Database command
-4)run payrollAPI 
+3)Open PayrollAPI.Infrastructure project in nuget package manager console
+4)Execute Update-Database command
+5)run payrollAPI 
 
-Fronted
+Frontend
+
 1) execute npm install command in payrollUI
 2) execute ng s -o
