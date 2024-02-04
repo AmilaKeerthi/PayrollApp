@@ -10,6 +10,26 @@
 
 ![image](https://github.com/AmilaKeerthi/PayrollApp/assets/154110349/3607eca0-31a8-4433-b9dc-cf98260553f9)
 
+Features 
+Employee Management:
+  Add new employees with basic details (name, email, salary, join date).
+  Send welcome email with temporary password to new employees.
+  Allow employees to login and update their profile (except email, salary, join date).
+  View employee list and individual profiles.
+  Activate/inactivate employee profiles.
+Salary Management:
+  Record monthly employee salary payments.
+  View salary payments by month and employee.
+Security:
+  Separate admin login with full access.
+  Employee login with restricted access.
+  Secure password management (temporary password, password change).
+  Role-based access control.
+Additional:
+  Used Angular frontend and .NET 6 backend.
+  Implemented REST API standards.
+  Used design patterns and lazy loading.
+
 Instructions
 
 Backend
