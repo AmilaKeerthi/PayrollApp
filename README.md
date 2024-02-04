@@ -2,15 +2,14 @@
 
 # employee payroll app 
 
-1) Angular v17
-2) .Net 6
+ 1) Used Angular v17 frontend and .NET 6 backend.
+ 2) Implemented REST API standards.
+ 3) Used design patterns and lazy loading.
 
 ![app-demo2](https://github.com/AmilaKeerthi/PayrollApp/assets/154110349/34d8553d-8402-4441-96fa-0c7b11ad9494)
 
-
-![image](https://github.com/AmilaKeerthi/PayrollApp/assets/154110349/3607eca0-31a8-4433-b9dc-cf98260553f9)
-
 Features 
+
   Employee Management:
   
     1) Add new employees with basic details (name, email, salary, join date).
@@ -18,18 +17,25 @@ Features
     3) Allow employees to login and update their profile (except email, salary, join date).
     4) View employee list and individual profiles.
     5) Activate/inactivate employee profiles.
+    
   Salary Management:
+  
     1) Record monthly employee salary payments.
     2) View salary payments by month and employee.
+    
   Security:
+  
     1) Separate admin login with full access.
     2) Employee login with restricted access.
     3) Secure password management (temporary password, password change).
     4) Role-based access control.
-  Additional:
-    1) Used Angular frontend and .NET 6 backend.
-    2) Implemented REST API standards.
-    3) Used design patterns and lazy loading.
+
+
+![image](https://github.com/AmilaKeerthi/PayrollApp/assets/154110349/3607eca0-31a8-4433-b9dc-cf98260553f9)
+
+
+  
+   
 
 Instructions
 
